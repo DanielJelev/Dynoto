@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="issueTracker" ng-controller="MainController">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Dynoto</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style/bootstrap.css">
+    <link rel="stylesheet" href="style/bootstrap-theme.css">
+    <link rel="stylesheet" href="style/app.css">
+</head>
+<header id="app-header" ng-include="'views/nav-header.html'">
+
+</header>
+<body>
+  <div ng-view>
+
+  </div>
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+  <script src="libs/angular/angular.js"></script>
+  <script src="libs/angular-route/angular-route.js"></script>
+  <script src="libs/angular-resource/angular-resource.js"></script>
+  <script src="libs/ng-storage/ngStorage.js"></script>
+  <script src="libs/kinvey.js"></script>
+ <script src="libs/jquery/jquery-2.2.2.js"></script>
+ <script src="libs/jquery.noty/jquery.noty.js"></script>
+  <script src="libs/bootstrap/bootstrap.js"></script>
+  <script src="libs/ui-bootstrap-tpls-1.3.2.js"></script>
+
+  <script src="app/app.js"></script>
+
+               <!--Controllers-->
+  <script src="app/controllers/authenticationController.js"></script>
+  <script src="app/controllers/mainController.js"></script>
+
+                <!--Services-->
+  <script src="app/services/authenticationService.js"></script>
+  <script src="app/services/userService.js"></script>
+  <script src="app/services/notifyService.js"></script>
+
+                <!--Directives-->
+  <script src="app/directive/viewDirectives.js"></script>
+
+</body>
+</html>

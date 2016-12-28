@@ -1,0 +1,50 @@
+<div class="container col-md-6">
+    <div class="panel panel-success">
+        <div class="panel-body">Project</div>
+        <fieldset>
+            <legend>Name : {{newProject.Name}}</legend>
+            <div class="panel-body">
+                <div>
+                    <span><strong>Description:</strong> {{newProject.Description}}</span>
+                </div>
+                <div>
+                    <span><strong>Lead:</strong> {{newProject.Lead.Username}}</span>
+                </div>
+                <div>
+                    <span><strong>Transition Scheme Id:</strong> {{newProject.TransitionSchemeId}}</span>
+                </div>
+                <div ng-if="newProject.Labels.length > 0">
+                    <span><strong>Labels:</strong></span> <span id="labels" ng-repeat="label in newProject.Labels">{{label.Name}}; </span>
+                </div>
+
+                <div ng-if="newProject.Priorities.length > 0">
+                    <span><strong>Priorities</strong></span>
+                    <span ng-repeat="priority in newProject.Priorities">{{priority.Name}}; </span>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+
+   <div ng-if="authService.isAdmin()">
+       <a href="#/project/{{newProject.Id}}/edit" class="btn btn-success" >Edit Project</a>
+       <a href="#/project/{{newProject.Id}}/add-issue" class="btn btn-success" >Add Issue</a>
+   </div>
+</div>
+
+<div class="container col-md-6" ng-show="newProject.issues.length > 0">
+    <div class="panel panel-warning">
+        <div class="panel-body"><strong>Issues</strong></div>
+        <div class="list-group">
+
+            <a href="#/issues/{{issue.Id}}" class="list-group-item" ng-repeat="issue in newProject.issues">{{issue.Title}}
+            </a>
+        </div>
+    </div>
+</div>
+<div class="container col-md-6" ng-show="newProject.issues.length == 0">
+    <div class="panel panel-warning">
+        <div class="panel-body"><strong>No Issues</strong></div>
+
+    </div>
+</div>
+
